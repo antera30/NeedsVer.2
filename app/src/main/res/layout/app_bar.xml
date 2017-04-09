@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/app_bar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:collapseIcon="@mipmap/ic_launcher"
+    android:background="@color/colorPrimary"
+    app:theme="@style/MyCustomAppbarTheme"
+    app:popupTheme="@style/PopupMenu"
+    app:layout_scrollFlags="scroll|enterAlways"
+    app:title="">
+    <ImageView
+        android:layout_gravity="center_horizontal"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:background="@mipmap/ic_app_bar_icon"
+        />
+</android.support.v7.widget.Toolbar>

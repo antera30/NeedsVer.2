@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="fab_margin">17dp</dimen>
+    <dimen name="app_bar_text_size">14sp</dimen>
+    <dimen name="button_padding">24dp</dimen>
+    <dimen name="cloud_size">33dp</dimen>
+    <dimen name="logo_with_clouds_height">245px</dimen>
+    <dimen name="logo_with_clouds_width">497px</dimen>
+    <dimen name="textsize">11sp</dimen>
+    <dimen name="image_promotion_height">200dp</dimen>
+</resources>

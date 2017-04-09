@@ -1,0 +1,64 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="windowActionBar">false</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textColorHint">@color/white</item>
+        <item name="android:textColorPrimary">@android:color/white</item>
+        <item name="android:buttonStyle">@style/ButtonStyle</item>
+        <item name="android:textSize">@dimen/textsize</item>
+        <item name="android:editTextStyle">@style/TextStyle</item>
+        <item name="android:tabWidgetStyle">@style/CustomTabWidget</item>
+        <item name="android:actionBarTabTextStyle">@style/CustomTabWidget</item>
+    </style>
+
+    <style name="AppTheme.WhiteBackground" parent="AppTheme">
+        <!-- Customize your theme here. -->
+        <item name="android:textColorHint">@android:color/secondary_text_light</item>
+        <item name="android:textColorPrimary">@android:color/primary_text_light</item>
+
+    </style>
+
+
+    <style name="MyCustomAppbarTheme" parent="ThemeOverlay.AppCompat.Light">
+        <item name="android:textColorPrimary">@color/white</item>
+        <item name="android:textColorSecondary">@color/white</item>
+        <item name="android:popupBackground">@color/colorPrimary</item>
+    </style>
+
+    <style name="PopupMenu" parent="@android:style/Widget.PopupMenu"></style>
+
+    <style name="TextStyle" parent="Widget.AppCompat.EditText">
+        <item name="android:background">@drawable/white_layout_bg</item>
+        <item name="android:textColor">@color/text_color_primary</item>
+        <item name="android:textColorHint">@color/white</item>
+        <item name="android:colorAccent" tools:targetApi="lollipop">@color/colorAccent</item>
+    </style>
+
+    <style name="ButtonStyle" parent="@android:style/Widget.Button">
+        <item name="android:background">@drawable/statebutton</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:paddingRight">@dimen/fab_margin</item>
+        <item name="android:paddingLeft">@dimen/fab_margin</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingBottom">10dp</item>
+        <item name="android:focusable">true</item>
+        <item name="android:clickable">true</item>
+    </style>
+
+    <style name="CustomTabWidget" parent="@android:style/Widget.TabWidget">
+        <item name="android:textAppearance">@style/CustomTabWidgetText</item>
+    </style>
+
+    <style name="CustomTabWidgetText" parent="@android:style/TextAppearance.Widget.TabWidget">
+        <item name="android:textSize">@dimen/textsize</item>
+        <!--<item name="android:textStyle">bold</item>-->
+    </style>
+
+</resources>

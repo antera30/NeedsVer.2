@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">Needs Ver.2</string>
+    <string name="menu_supermarket">Supermarket</string>
+    <string name="register">Feeling lonely? Click Here to Register</string>
+    <string name="forget_password">Forgot your password ?</string>
+    <string name="back_to_login">Go back to Login</string>
+    <string name="login_button">LOGIN</string>
+    <string name="register_button">REGISTER</string>
+    <string name="phone_number">phone number</string>
+    <string name="username">username</string>
+    <string name="password">password</string>
+    <string name="email">email</string>
+    <string name="re_password">re - password</string>
+    <string name="verification_code">Send verification code via : </string>
+    <string name="email_button">EMAIL</string>
+    <string name="sms_button">SMS</string>
+    <string name="code_hint">XXXXX</string>
+    <string name="verification_button">VERIFY CODE</string>
+    <string name="q_send_again_verification">Didn`t receive any message ? click here to send again</string>
+    <string name="send_again_verification">Your verification code has been sent</string>
+    <string name="one">fragment pertama</string>
+
+
+    <!--string values for main menu-->
+    <string name="home">Home</string>
+    <string name="account">Account</string>
+    <string name="help">Help</string>
+    <string name="history">History</string>
+    <string name="two">fragment kedua</string>
+    <string name="three">fragment ketifa</string>
+    <string name="four">Fragment keempat</string>
+
+
+</resources>
