@@ -10,18 +10,16 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.util.DisplayMetrics;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import antera.needsver2.adapter.CarouselPagerAdapter;
 import antera.needsver2.fragment.FourFragment;
 import antera.needsver2.fragment.HomeFragment;
 import antera.needsver2.fragment.ThreeFragment;
 import antera.needsver2.fragment.TwoFragment;
 
-public class HomeActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity {
 
     private Toolbar toolbar;
     private TabLayout tabLayout;
