@@ -3,16 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/app_bar"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:collapseIcon="@mipmap/ic_launcher"
+    android:layout_height="@dimen/appbar_size"
     android:background="@color/colorPrimary"
     app:theme="@style/MyCustomAppbarTheme"
     app:popupTheme="@style/PopupMenu"
     app:title="">
     <ImageView
         android:layout_gravity="center_horizontal"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
+        android:layout_width="@dimen/appbar_size"
+        android:layout_height="@dimen/appbar_size"
         android:background="@mipmap/ic_app_bar_icon"
         />
 </android.support.v7.widget.Toolbar>

@@ -25,7 +25,7 @@ public class SubCategoryViewHolder extends ChildViewHolder {
 
     public void onBind(SubCategory subCategory, ExpandableGroup group) {
         tv_sub_name.setText(subCategory.getName());
-        tv_sub_name.setCompoundDrawablesWithIntrinsicBounds(R.drawable.bin, 0, 0, 0);
+        tv_sub_name.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_wb_sunny_yellow_700_24dp, 0, 0, 0);
 
 //        give icons
 //        if (group.getTitle().equals("Android")) {
