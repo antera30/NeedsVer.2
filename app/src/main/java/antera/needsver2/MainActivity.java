@@ -34,14 +34,15 @@ public class MainActivity extends AppCompatActivity {
             R.string.home,
             R.string.history,
             R.string.account,
-            R.string.help
+            R.string.help,
     };
 
+    HomeFragment homeFragment = new HomeFragment();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+        setContentView(R.layout.activity_main);
 
         toolbar = (Toolbar) findViewById(R.id.app_bar);
         setSupportActionBar(toolbar);
@@ -53,9 +54,12 @@ public class MainActivity extends AppCompatActivity {
 
         tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
-        tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
+                if (tab.getPosition() == 0) {
+                    homeFragment.setupCarousel();
+                }
                 int tabIconColor = ContextCompat.getColor(getApplicationContext(), R.color.colorAccent);
                 tab.getIcon().setColorFilter(tabIconColor, PorterDuff.Mode.SRC_IN);
             }
@@ -74,9 +78,12 @@ public class MainActivity extends AppCompatActivity {
         setupTabIcons();
     }
 
-    protected void setupViewPager(ViewPager viewPager){
-        ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFrag(new HomeFragment(), getResources().getString(tabTitle[0]));
+
+    private ViewPagerAdapter adapter;
+
+    protected void setupViewPager(ViewPager viewPager) {
+        adapter = new ViewPagerAdapter(getSupportFragmentManager());
+        adapter.addFrag(homeFragment, getResources().getString(tabTitle[0]));
         adapter.addFrag(new TwoFragment(), getResources().getString(tabTitle[1]));
         adapter.addFrag(new ThreeFragment(), getResources().getString(tabTitle[2]));
         adapter.addFrag(new FourFragment(), getResources().getString(tabTitle[3]));
@@ -90,12 +97,17 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.getTabAt(3).setIcon(tabIcons[3]);
     }
 
-    class ViewPagerAdapter extends FragmentPagerAdapter{
+    class ViewPagerAdapter extends FragmentPagerAdapter {
         private final List<Fragment> mFragmentList = new ArrayList<>();
         private final List<String> mFragmentTitleList = new ArrayList<>();
 
         public ViewPagerAdapter(FragmentManager fm) {
             super(fm);
+        }
+
+        @Override
+        public int getItemPosition(Object object) {
+            return POSITION_NONE;
         }
 
         @Override

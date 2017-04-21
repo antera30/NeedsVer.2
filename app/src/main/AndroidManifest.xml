@@ -22,9 +22,11 @@
             android:parentActivityName=".LoginActivity" />
         <activity android:name=".MainActivity" />
         <activity
-            android:theme="@style/AppTheme.WhiteBackground"
             android:name=".ForgotPasswordActivity"
-            android:parentActivityName=".LoginActivity"></activity>
+            android:parentActivityName=".LoginActivity"
+            android:theme="@style/AppTheme.WhiteBackground" />
+        <activity android:name=".Sup_CategoriesActivity" />
+        <activity android:name=".Sup_ItemsActivity"></activity>
     </application>
 
 </manifest>
