@@ -9,4 +9,5 @@
     <color name="white">#FFFFFF</color>
     <color name="gray">#dfdfdf</color>
     <color name="text_color_primary">#000000</color>
+    <color name="devider">#ededed</color>
 </resources>
