@@ -1,13 +1,18 @@
 package antera.needsver2;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.provider.ContactsContract;
+import android.support.annotation.NonNull;
+import android.support.annotation.RequiresPermission;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+
+import com.thoughtbot.expandablerecyclerview.listeners.OnGroupClickListener;
 
 import java.util.ArrayList;
 
@@ -44,7 +49,11 @@ public class Sup_CategoriesActivity extends AppCompatActivity {
         adapter = new AdapterRecyclerViewCategory(this, categories);
         recyclerView.setAdapter(adapter);
 
+
+
     }
+
+
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {

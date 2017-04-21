@@ -5,6 +5,7 @@
     android:background="@color/white">
 
     <LinearLayout
+        android:id="@+id/content"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -25,4 +26,10 @@
             android:padding="@dimen/text_padding" />
 
     </LinearLayout>
+
+    <View
+        android:layout_below="@id/content"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/devider"/>
 </RelativeLayout>

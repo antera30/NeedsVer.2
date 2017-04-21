@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.thoughtbot.expandablerecyclerview.ExpandableRecyclerViewAdapter;
 import com.thoughtbot.expandablerecyclerview.models.ExpandableGroup;
@@ -35,9 +36,9 @@ public class AdapterRecyclerViewCategory extends ExpandableRecyclerViewAdapter<C
     }
 
     @Override
-    public SubCategoryViewHolder onCreateChildViewHolder(ViewGroup parent, int viewType) {
+    public SubCategoryViewHolder onCreateChildViewHolder(final ViewGroup parent, final int viewType) {
         LayoutInflater inflater = (LayoutInflater) activity.getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
-        View view = inflater.inflate(R.layout.child_view_holder, parent, false);
+        final View view = inflater.inflate(R.layout.child_view_holder, parent, false);
 
         return new SubCategoryViewHolder(view);
     }
@@ -46,10 +47,15 @@ public class AdapterRecyclerViewCategory extends ExpandableRecyclerViewAdapter<C
     public void onBindChildViewHolder(SubCategoryViewHolder holder, int flatPosition, ExpandableGroup group, int childIndex) {
         final SubCategory subCategory= ((Category) group).getItems().get(childIndex);
         holder.onBind(subCategory,group);
+
     }
+
+
 
     @Override
     public void onBindGroupViewHolder(CategoryViewHolder holder, int flatPosition, ExpandableGroup group) {
         holder.setGroupName(group);
     }
+
+
 }
