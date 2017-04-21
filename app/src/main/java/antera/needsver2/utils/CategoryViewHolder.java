@@ -25,14 +25,14 @@ public class CategoryViewHolder extends GroupViewHolder {
 
     @Override
     public void expand() {
-        tv_name.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.ic_keyboard_arrow_down_grey_900_24dp, 0);
+        tv_name.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.ic_keyboard_arrow_down_black_24dp, 0);
         Log.i("Adapter", "expand");
     }
 
     @Override
     public void collapse() {
         Log.i("Adapter", "collapse");
-        tv_name.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.ic_keyboard_arrow_up_grey_900_24dp, 0);
+        tv_name.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.ic_keyboard_arrow_up_black_24dp, 0);
     }
 
     public void setGroupName(ExpandableGroup group) {
