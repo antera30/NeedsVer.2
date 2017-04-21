@@ -24,6 +24,7 @@ public class SubCategoryViewHolder extends ChildViewHolder {
         this.v = itemView;
     }
 
+
     public void onBind(final SubCategory subCategory, ExpandableGroup group) {
         tv_sub_name.setText(subCategory.getName());
         tv_sub_name.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_wb_sunny_yellow_700_24dp, 0, 0, R.drawable.divider_line);
