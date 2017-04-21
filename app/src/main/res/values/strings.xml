@@ -19,7 +19,7 @@
     <string name="q_send_again_verification">Didn`t receive any message ? click here to send again</string>
     <string name="send_again_verification">Your verification code has been sent</string>
     <string name="one">fragment pertama</string>
-
+    <string name="category">Pilih Kategori</string>
 
     <!--string values for main menu-->
     <string name="home">Home</string>

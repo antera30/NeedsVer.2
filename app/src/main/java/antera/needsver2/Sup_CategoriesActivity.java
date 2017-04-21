@@ -1,10 +1,13 @@
 package antera.needsver2;
 
+import android.content.Intent;
 import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 
 import java.util.ArrayList;
 
@@ -17,11 +20,19 @@ public class Sup_CategoriesActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private ArrayList<Category> categories;
     private AdapterRecyclerViewCategory adapter;
+    private Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kategori);
+
+        toolbar = (Toolbar) findViewById(R.id.empty_app_bar);
+        setSupportActionBar(toolbar);
+
+        getSupportActionBar().setTitle(R.string.category);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
 
         recyclerView = (RecyclerView) findViewById(R.id.rv_categories);
         categories = new ArrayList<>();
@@ -72,4 +83,19 @@ public class Sup_CategoriesActivity extends AppCompatActivity {
         categories.add(new Category("Makanan", makanan));
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                // todo: goto back activity from here
+                Intent intent = new Intent(Sup_CategoriesActivity.this, MainActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
+                finish();
+                return true;
+
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
 }
