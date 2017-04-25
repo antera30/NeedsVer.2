@@ -1,4 +1,4 @@
-package antera.needsver2;
+package antera.needsver2.supermarket;
 
 import android.graphics.PorterDuff;
 import android.support.design.widget.TabLayout;
@@ -14,6 +14,7 @@ import android.support.v7.widget.Toolbar;
 import java.util.ArrayList;
 import java.util.List;
 
+import antera.needsver2.R;
 import antera.needsver2.fragment.FourFragment;
 import antera.needsver2.fragment.HomeFragment;
 import antera.needsver2.fragment.ThreeFragment;

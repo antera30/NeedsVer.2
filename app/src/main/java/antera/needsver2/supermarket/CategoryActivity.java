@@ -1,10 +1,6 @@
-package antera.needsver2;
+package antera.needsver2.supermarket;
 
-import android.app.Activity;
 import android.content.Intent;
-import android.provider.ContactsContract;
-import android.support.annotation.NonNull;
-import android.support.annotation.RequiresPermission;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -12,15 +8,14 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
-import com.thoughtbot.expandablerecyclerview.listeners.OnGroupClickListener;
-
 import java.util.ArrayList;
 
+import antera.needsver2.R;
 import antera.needsver2.model.Category;
 import antera.needsver2.model.SubCategory;
 import antera.needsver2.utils.AdapterRecyclerViewCategory;
 
-public class Sup_CategoriesActivity extends AppCompatActivity {
+public class CategoryActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private ArrayList<Category> categories;
@@ -49,11 +44,7 @@ public class Sup_CategoriesActivity extends AppCompatActivity {
         adapter = new AdapterRecyclerViewCategory(this, categories);
         recyclerView.setAdapter(adapter);
 
-
-
     }
-
-
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
@@ -97,7 +88,7 @@ public class Sup_CategoriesActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case android.R.id.home:
                 // todo: goto back activity from here
-                Intent intent = new Intent(Sup_CategoriesActivity.this, MainActivity.class);
+                Intent intent = new Intent(CategoryActivity.this, MainActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intent);
                 finish();

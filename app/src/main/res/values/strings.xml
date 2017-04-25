@@ -29,6 +29,8 @@
     <string name="two">fragment kedua</string>
     <string name="three">fragment ketifa</string>
     <string name="four">Fragment keempat</string>
+    <string name="tambah_keranjang">Tambahkan ke Keranjang</string>
+    <string name="pilih_kecamatan">Tetapkan Lokasi Pengiriman</string>
 
 
 </resources>

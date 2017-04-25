@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/register_layout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:id="@+id/register_layout">
+    android:layout_height="match_parent">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -42,8 +42,8 @@
                         android:layout_width="@dimen/logo_with_clouds_width"
                         android:layout_height="@dimen/logo_with_clouds_height"
                         android:layout_centerHorizontal="true"
-                        android:layout_marginTop="@dimen/fab_margin"
                         android:layout_marginBottom="@dimen/fab_margin"
+                        android:layout_marginTop="@dimen/fab_margin"
                         android:src="@drawable/logi_with_clouds" />
 
                     <!--  Email Label -->
@@ -129,8 +129,9 @@
                     </android.support.design.widget.TextInputLayout>
                 </LinearLayout>
 
-                <android.support.v7.widget.AppCompatButton
+                <Button
                     android:id="@+id/btn_register"
+                    style="@style/ButtonStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="24dp"

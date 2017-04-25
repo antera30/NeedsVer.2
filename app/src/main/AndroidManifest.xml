@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="antera.needsver2">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -16,17 +18,28 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LoginActivity" />
+        <activity
+            android:name=".LoginActivity"
+            android:theme="@style/AppTheme" />
         <activity
             android:name=".RegisterActivity"
-            android:parentActivityName=".LoginActivity" />
-        <activity android:name=".MainActivity" />
+            android:parentActivityName=".LoginActivity"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".supermarket.MainActivity" />
         <activity
             android:name=".ForgotPasswordActivity"
             android:parentActivityName=".LoginActivity"
             android:theme="@style/AppTheme.WhiteBackground" />
-        <activity android:name=".Sup_CategoriesActivity" />
-        <activity android:name=".Sup_ItemsActivity"></activity>
+        <activity
+            android:name=".supermarket.CategoryActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".supermarket.ItemsActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".supermarket.ProductViewActivity"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".supermarket.ChooseDeliveryLocation"></activity>
     </application>
 
 </manifest>

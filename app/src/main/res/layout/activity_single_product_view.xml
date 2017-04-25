@@ -4,19 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="antera.needsver2.supermarket.CategoryActivity">
+    android:fitsSystemWindows="true"
+    tools:context="antera.needsver2.supermarket.ProductViewActivity">
+
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
         <include layout="@layout/empty_app_bar"></include>
 
         <android.support.v7.widget.RecyclerView
-            android:id="@+id/rv_categories"
+            android:id="@+id/product_content_recyclerview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:scrollbars="vertical"></android.support.v7.widget.RecyclerView>
+            android:clipToPadding="false"
+            android:scrollbars="vertical"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
     </LinearLayout>
-
 
 </android.support.design.widget.CoordinatorLayout>

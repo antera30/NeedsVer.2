@@ -1,9 +1,11 @@
-package antera.needsver2;
+package antera.needsver2.supermarket;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class Sup_ItemsActivity extends AppCompatActivity {
+import antera.needsver2.R;
+
+public class ItemsActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

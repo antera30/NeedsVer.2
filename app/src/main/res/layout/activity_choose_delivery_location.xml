@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="antera.needsver2.supermarket.ChooseDeliveryLocation">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <include layout="@layout/empty_app_bar"></include>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/spinner_layout"
+                    android:padding="@dimen/spinner_padding">
+
+                    <Spinner
+                        android:id="@+id/spin_provinsi"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/spinner_size" />
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/spinner_layout"
+                    android:padding="@dimen/spinner_padding">
+
+                    <Spinner
+                        android:id="@+id/spin_kota"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/spinner_size" />
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/spinner_layout"
+                    android:padding="@dimen/spinner_padding">
+
+                    <Spinner
+                        android:id="@+id/spin_kecamatan"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/spinner_size" />
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+        <Button
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_pilih_kecamatan"
+            android:text="@string/pilih_kecamatan"
+            style="@style/RectButtonStyle"/>
+    </RelativeLayout>
+
+</android.support.design.widget.CoordinatorLayout>
