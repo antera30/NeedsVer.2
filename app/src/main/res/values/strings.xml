@@ -31,6 +31,7 @@
     <string name="four">Fragment keempat</string>
     <string name="tambah_keranjang">Tambahkan ke Keranjang</string>
     <string name="pilih_kecamatan">Tetapkan Lokasi Pengiriman</string>
+    <string name="alamat">Pilih Alamat Pengiriman</string>
 
 
 </resources>
