@@ -39,7 +39,12 @@
         <activity
             android:name=".supermarket.ProductViewActivity"
             android:theme="@style/AppTheme" />
-        <activity android:name=".supermarket.ChooseDeliveryLocation"></activity>
+        <activity
+            android:name=".supermarket.ChooseDeliveryLocation"
+            android:theme="@style/AppTheme"></activity>
+        <activity
+            android:name=".supermarket.Checkout"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>

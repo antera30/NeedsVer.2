@@ -32,6 +32,10 @@
     <string name="tambah_keranjang">Tambahkan ke Keranjang</string>
     <string name="pilih_kecamatan">Tetapkan Lokasi Pengiriman</string>
     <string name="alamat">Pilih Alamat Pengiriman</string>
+    <string name="hint_kecamatan">masukkan kecamatan pengiriman</string>
+    <string name="lanjutkan_belanja">Lanjutkan Belanja</string>
+    <string name="shopping_cart">Add to cart</string>
+    <string name="action_settings">Setting</string>
 
 
 </resources>

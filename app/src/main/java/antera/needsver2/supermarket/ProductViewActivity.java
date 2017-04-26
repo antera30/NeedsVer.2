@@ -10,8 +10,11 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.TypedValue;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -130,9 +133,19 @@ public class ProductViewActivity extends AppCompatActivity {
 //                startActivity(intent);
                 finish();
                 return true;
-
+            case R.id.shopping_cart:
+                Intent i = new Intent(getApplicationContext(), Checkout.class);
+                startActivity(i);
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.supermarket_menu, menu);
+        return true;
     }
 }

@@ -1,4 +1,4 @@
-package antera.needsver2;
+package antera.needsver2.supermarket;
 
 import android.app.Activity;
 import android.content.Context;
@@ -28,6 +28,7 @@ import com.wdullaer.materialdatetimepicker.time.TimePickerDialog;
 import java.util.ArrayList;
 import java.util.Calendar;
 
+import antera.needsver2.R;
 import antera.needsver2.model.Alamat;
 import antera.needsver2.utils.Alamat_adapter;
 import antera.needsver2.model.SubAlamat;
@@ -48,6 +49,7 @@ public class AlamatActivity extends AppCompatActivity implements DatePickerDialo
     private Button save;
     private ImageView tambah;
     Point p;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

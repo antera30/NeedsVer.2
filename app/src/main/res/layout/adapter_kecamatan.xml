@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingRight="@dimen/horizontal_padding"
+    android:paddingLeft="@dimen/horizontal_padding"
+    android:paddingBottom="@dimen/vertical_padding"
+    android:paddingTop="@dimen/vertical_padding"
+    android:gravity="center_vertical">
+    <TextView
+        android:id="@+id/tv_kecamatan"
+        android:textSize="@dimen/textsize"
+        android:textColor="@color/mdtp_dark_gray"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</LinearLayout>

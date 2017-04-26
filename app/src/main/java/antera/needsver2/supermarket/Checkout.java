@@ -1,4 +1,4 @@
-package antera.needsver2;
+package antera.needsver2.supermarket;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -7,6 +7,7 @@ import android.support.v7.widget.RecyclerView;
 
 import java.util.ArrayList;
 
+import antera.needsver2.R;
 import antera.needsver2.model.Checkout_detail;
 import antera.needsver2.utils.Adapter_checkout;
 

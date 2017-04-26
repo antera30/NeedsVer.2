@@ -5,60 +5,48 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="antera.needsver2.supermarket.ChooseDeliveryLocation">
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <include layout="@layout/empty_app_bar"></include>
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/spinner_layout"
-                    android:padding="@dimen/spinner_padding">
-
-                    <Spinner
-                        android:id="@+id/spin_provinsi"
-                        android:layout_width="match_parent"
-                        android:layout_height="@dimen/spinner_size" />
-                </RelativeLayout>
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/spinner_layout"
-                    android:padding="@dimen/spinner_padding">
-
-                    <Spinner
-                        android:id="@+id/spin_kota"
-                        android:layout_width="match_parent"
-                        android:layout_height="@dimen/spinner_size" />
-                </RelativeLayout>
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/spinner_layout"
-                    android:padding="@dimen/spinner_padding">
-
-                    <Spinner
-                        android:id="@+id/spin_kecamatan"
-                        android:layout_width="match_parent"
-                        android:layout_height="@dimen/spinner_size" />
-                </RelativeLayout>
-            </LinearLayout>
-        </LinearLayout>
-        <Button
-            android:layout_alignParentBottom="true"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/btn_pilih_kecamatan"
-            android:text="@string/pilih_kecamatan"
-            style="@style/RectButtonStyle"/>
+            android:orientation="vertical">
+
+            <include layout="@layout/empty_app_bar"></include>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/layout_padding">
+
+                <EditText
+                    android:id="@+id/input_kecamatan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/hint_kecamatan"
+                    android:textColor="@color/colorPrimary"
+                    android:textColorHint="@color/gray"
+                    android:singleLine="true" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv_kecamatan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="vertical"></android.support.v7.widget.RecyclerView>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <android.support.design.widget.CoordinatorLayout
+            android:id="@+id/snackbar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"></android.support.design.widget.CoordinatorLayout>
     </RelativeLayout>
 
 </android.support.design.widget.CoordinatorLayout>
