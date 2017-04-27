@@ -3,6 +3,7 @@ package antera.needsver2.utils;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -34,12 +35,14 @@ public class AdapterContentMainFeature extends RecyclerView.Adapter<AdapterConte
         public TextView title;
         public ImageView thumbnail;
         public RelativeLayout contentview;
+        public CardView cardView;
 
         public MyViewHolder(View view) {
             super(view);
             title = (TextView) view.findViewById(R.id.title);
             contentview = (RelativeLayout) view.findViewById(R.id.content_layout);
             thumbnail = (ImageView) view.findViewById(R.id.thumbnail);
+            cardView = (CardView) view.findViewById(R.id.card_view);
         }
     }
 
@@ -72,11 +75,9 @@ public class AdapterContentMainFeature extends RecyclerView.Adapter<AdapterConte
 //
 //            }
 //        });
-
-        holder.thumbnail.setOnClickListener(new View.OnClickListener() {
+        holder.contentview.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(mContext, "" + position, Toast.LENGTH_LONG).show();
                 if (position == 0){
                     Intent i = new Intent(mContext, ChooseDeliveryLocation.class);
                     mContext.startActivity(i);
@@ -84,6 +85,17 @@ public class AdapterContentMainFeature extends RecyclerView.Adapter<AdapterConte
                 }
             }
         });
+//        holder.thumbnail.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Toast.makeText(mContext, "" + position, Toast.LENGTH_LONG).show();
+//                if (position == 0){
+//                    Intent i = new Intent(mContext, ChooseDeliveryLocation.class);
+//                    mContext.startActivity(i);
+//                    ((Activity) mContext).finish();
+//                }
+//            }
+//        });
     }
 
 
