@@ -36,6 +36,12 @@
     <string name="lanjutkan_belanja">Lanjutkan Belanja</string>
     <string name="shopping_cart">Add to cart</string>
     <string name="action_settings">Setting</string>
+    <string name="logout">Logout</string>
+    <string name="profile">Profile</string>
+    <string name="order">Order</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>

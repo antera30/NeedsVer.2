@@ -5,9 +5,11 @@
     <color name="colorAccent">#e6b16c</color>
     <color name="login_background">#082454</color>
     <color name="light_navi">#13397b</color>
+    <color name="color_primary_light">#5e95f5</color>
     <color name="orange">#F16236</color>
     <color name="white">#FFFFFF</color>
     <color name="gray">#dfdfdf</color>
     <color name="text_color_primary">#000000</color>
     <color name="devider">#ededed</color>
+    <color name="yellow">#ffcd2f</color>
 </resources>
