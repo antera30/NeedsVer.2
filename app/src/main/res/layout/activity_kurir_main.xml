@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="antera.needsver2.supermarket.GudangMainActivity">
+    tools:context="antera.needsver2.supermarket.KurirMainActivity">
 
     <android.support.design.widget.AppBarLayout
-        android:id="@+id/gudang_appbar_layout"
+        android:id="@+id/kurir_appbar_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fitsSystemWindows="true"
@@ -33,7 +33,7 @@
                     android:id="@+id/htab_header"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/gudang"
+                    android:background="@drawable/courier"
                     android:fitsSystemWindows="true"
                     android:scaleType="centerCrop"
                     app:layout_collapseMode="parallax" />
@@ -92,7 +92,7 @@
 
 
             <android.support.design.widget.TabLayout
-                android:id="@+id/gudang_tabs"
+                android:id="@+id/kurir_tabs"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
@@ -108,11 +108,10 @@
     </android.support.design.widget.AppBarLayout>
 
     <android.support.v4.view.ViewPager
-        android:id="@+id/gudang_viewpager"
+        android:id="@+id/kurir_viewpager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/gudang_appbar_layout"
         app:layout_behavior="@string/appbar_scrolling_view_behavior" />
-
 
 </android.support.design.widget.CoordinatorLayout>

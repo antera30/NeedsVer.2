@@ -22,7 +22,7 @@ import antera.needsver2.R;
 import antera.needsver2.fragment.GudangHistoryFragment;
 import antera.needsver2.fragment.GudangOrderFragment;
 
-public class AdminGudangActivity extends AppCompatActivity {
+public class GudangMainActivity extends AppCompatActivity {
 
     private Toolbar toolbar;
     private TabLayout tabLayout;
@@ -42,10 +42,12 @@ public class AdminGudangActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_gudang);
 
-        toolbar = (Toolbar) findViewById(R.id.app_bar);
+        toolbar = (Toolbar) findViewById(R.id.htab_toolbar);
+        toolbar.setTitle("Nama Gudang");
         setSupportActionBar(toolbar);
 
-        getSupportActionBar().setTitle(null);
+        //getSupportActionBar().setTitle(null);
+        getSupportActionBar().setIcon(R.mipmap.ic_app_bar_icon);
 
         viewPager = (ViewPager) findViewById(R.id.gudang_viewpager);
         setupViewPager(viewPager);

@@ -10,57 +10,53 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import antera.needsver2.R;
-import antera.needsver2.fragment.FourFragment;
-import antera.needsver2.fragment.HomeFragment;
-import antera.needsver2.fragment.ThreeFragment;
-import antera.needsver2.fragment.UserHistoryFragment;
+import antera.needsver2.fragment.GudangHistoryFragment;
+import antera.needsver2.fragment.GudangOrderFragment;
+import antera.needsver2.fragment.KurirHistoryFragment;
+import antera.needsver2.fragment.KurirOrderFragment;
 
-public class MainActivity extends AppCompatActivity {
+public class KurirMainActivity extends AppCompatActivity {
 
     private Toolbar toolbar;
     private TabLayout tabLayout;
     private ViewPager viewPager;
     private int[] tabIcons = {
-            R.drawable.home_icon,
-            R.drawable.history_icon,
-            R.drawable.user_icon,
-            R.drawable.help_icon
+            R.drawable.ic_reorder_black_24dp,
+            R.drawable.ic_history_black_24dp
     };
     private int[] tabTitle = {
-            R.string.home,
-            R.string.history,
-            R.string.account,
-            R.string.help,
+            R.string.order,
+            R.string.history
     };
-
-    HomeFragment homeFragment = new HomeFragment();
+    private ViewPagerAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_kurir_main);
 
-        toolbar = (Toolbar) findViewById(R.id.app_bar);
+        toolbar = (Toolbar) findViewById(R.id.htab_toolbar);
+        toolbar.setTitle("Nama Kurir");
         setSupportActionBar(toolbar);
 
-        getSupportActionBar().setTitle(null);
+        //getSupportActionBar().setTitle(null);
+        getSupportActionBar().setIcon(R.mipmap.ic_app_bar_icon);
 
-        viewPager = (ViewPager) findViewById(R.id.viewpager);
+        viewPager = (ViewPager) findViewById(R.id.kurir_viewpager);
         setupViewPager(viewPager);
 
-        tabLayout = (TabLayout) findViewById(R.id.tabs);
+        tabLayout = (TabLayout) findViewById(R.id.kurir_tabs);
         tabLayout.setupWithViewPager(viewPager);
+
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
-                if (tab.getPosition() == 0) {
-                    homeFragment.setupCarousel();
-                }
                 int tabIconColor = ContextCompat.getColor(getApplicationContext(), R.color.colorAccent);
                 tab.getIcon().setColorFilter(tabIconColor, PorterDuff.Mode.SRC_IN);
             }
@@ -72,30 +68,24 @@ public class MainActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onTabReselected(TabLayout.Tab tab) {
+            public void onTabReselected(TabLayout.Tab tab   ) {
 
             }
         });
         setupTabIcons();
+
     }
-
-
-    private ViewPagerAdapter adapter;
 
     protected void setupViewPager(ViewPager viewPager) {
         adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFrag(homeFragment, getResources().getString(tabTitle[0]));
-        adapter.addFrag(new UserHistoryFragment(), getResources().getString(tabTitle[1]));
-        adapter.addFrag(new ThreeFragment(), getResources().getString(tabTitle[2]));
-        adapter.addFrag(new FourFragment(), getResources().getString(tabTitle[3]));
+        adapter.addFrag(new KurirOrderFragment(), getResources().getString(tabTitle[0]));
+        adapter.addFrag(new KurirHistoryFragment(), getResources().getString(tabTitle[1]));
         viewPager.setAdapter(adapter);
     }
 
     private void setupTabIcons() {
         tabLayout.getTabAt(0).setIcon(tabIcons[0]);
         tabLayout.getTabAt(1).setIcon(tabIcons[1]);
-        tabLayout.getTabAt(2).setIcon(tabIcons[2]);
-        tabLayout.getTabAt(3).setIcon(tabIcons[3]);
     }
 
     class ViewPagerAdapter extends FragmentPagerAdapter {
@@ -131,4 +121,5 @@ public class MainActivity extends AppCompatActivity {
             return mFragmentTitleList.get(position);
         }
     }
+
 }

@@ -11,7 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".supermarket.AdminGudangActivity">
+        <activity android:name=".supermarket.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -25,7 +25,7 @@
             android:name=".RegisterActivity"
             android:parentActivityName=".LoginActivity"
             android:theme="@style/AppTheme" />
-        <activity android:name=".supermarket.MainActivity" />
+        <activity android:name=".SplashScreen" />
         <activity
             android:name=".ForgotPasswordActivity"
             android:parentActivityName=".LoginActivity"
@@ -45,7 +45,8 @@
         <activity
             android:name=".supermarket.Checkout"
             android:theme="@style/AppTheme" />
-        <activity android:name=".SplashScreen"></activity>
+        <activity android:name=".supermarket.KurirMainActivity" />
+        <activity android:name=".supermarket.GudangMainActivity"></activity>
     </application>
 
 </manifest>
