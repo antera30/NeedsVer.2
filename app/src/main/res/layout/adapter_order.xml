@@ -8,8 +8,9 @@
     android:layout_height="wrap_content"
     android:clickable="true"
     android:focusable="true"
-    android:background="?android:attr/selectableItemBackground"
-    android:elevation="7dp"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:background="@drawable/order_layout"
+    android:elevation="3dp"
     android:orientation="vertical">
 
     <LinearLayout
@@ -18,11 +19,11 @@
         android:background="@drawable/layout_round_top"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:elevation="3dp"
+        android:elevation="0dp"
         android:padding="@dimen/layout_padding">
 
         <TextView
-            android:id="@+id/gudang_kode_pesanan"
+            android:id="@+id/tv_kode_pesanan"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="1231231"
@@ -59,15 +60,14 @@
                 android:textSize="@dimen/text_medium" />
 
             <TextView
-                android:id="@+id/tv_lokasi"
+                android:id="@+id/tv_waktu_transaksi"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/small_horizontal_margin"
-                android:drawableLeft="@drawable/ic_location_on_black_24dp"
+                android:drawableLeft="@drawable/ic_access_time_grey_800_24dp"
                 android:drawablePadding="@dimen/drawable_padding"
                 android:gravity="center"
-                android:textStyle="bold"
-                android:text="Ruko Panji Makmur B28" />
+                android:text="2017-04-28 11:15:55" />
 
             <TextView
                 android:id="@+id/tv_waktu_pengiriman"

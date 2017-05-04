@@ -47,6 +47,10 @@
     <string name="ticket">Tiket dan Hotel</string>
     <string name="foods">Foods</string>
     <string name="taxi">Taxi dan Ojek</string>
+    <string name="transaksi">Transaksi</string>
+    <string name="data_penerima">Data Penerima</string>
+    <string name="nama_user">Carson</string>
+    <string name="status_transaksi">Status Transaksi</string>
 
 
 </resources>

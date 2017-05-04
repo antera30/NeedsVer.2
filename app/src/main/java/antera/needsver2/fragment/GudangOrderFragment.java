@@ -5,20 +5,16 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import antera.needsver2.R;
-import antera.needsver2.model.MenuNeeds;
 import antera.needsver2.model.Order;
-import antera.needsver2.model.SubCategory;
-import antera.needsver2.utils.AdapterOrderGudang;
+import antera.needsver2.utils.AdapterOrder;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -26,7 +22,7 @@ import antera.needsver2.utils.AdapterOrderGudang;
 public class GudangOrderFragment extends Fragment {
     View mView;
     private RecyclerView rv_order;
-    private AdapterOrderGudang adapterOrderGudang;
+    private AdapterOrder adapterOrderGudang;
     private List<Order> orderlist;
 
     public GudangOrderFragment() {
@@ -45,7 +41,7 @@ public class GudangOrderFragment extends Fragment {
         //add dummy data
         setData();
 
-        adapterOrderGudang = new AdapterOrderGudang(getContext(), orderlist);
+        adapterOrderGudang = new AdapterOrder(getContext(), orderlist);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
         rv_order.setLayoutManager(layoutManager);
         rv_order.setAdapter(adapterOrderGudang);

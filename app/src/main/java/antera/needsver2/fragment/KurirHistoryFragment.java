@@ -1,7 +1,5 @@
 package antera.needsver2.fragment;
 
-import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -15,14 +13,14 @@ import java.util.List;
 
 import antera.needsver2.R;
 import antera.needsver2.model.Order;
-import antera.needsver2.utils.AdapterOrderGudang;
+import antera.needsver2.utils.AdapterOrder;
 
 
 public class KurirHistoryFragment extends Fragment {
 
     View mView;
     private RecyclerView rv_history;
-    private AdapterOrderGudang adapterHistoryKurir;
+    private AdapterOrder adapterHistoryKurir;
     private List<Order> historylist;
 
     public KurirHistoryFragment() {
@@ -40,7 +38,7 @@ public class KurirHistoryFragment extends Fragment {
         //add dummy data
         setData();
 
-        adapterHistoryKurir = new AdapterOrderGudang(getContext(), historylist);
+        adapterHistoryKurir = new AdapterOrder(getContext(), historylist);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
         rv_history.setLayoutManager(layoutManager);
         rv_history.setAdapter(adapterHistoryKurir);

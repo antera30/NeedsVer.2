@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_shopping_basket_black_24dp"
+            android:drawablePadding="@dimen/drawable_padding"
+            android:text="@string/transaksi"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/text_large" />
+
+        <include layout="@layout/adapter_order"></include>
+
+        <TextView
+            android:layout_marginTop="@dimen/card_margin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_person_pin_circle_black_24dp"
+            android:drawablePadding="@dimen/drawable_padding"
+            android:text="@string/data_penerima"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/text_large" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/card_margin"
+            android:background="@drawable/order_layout"
+            android:clickable="true"
+            android:elevation="3dp"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:orientation="vertical"
+            android:padding="@dimen/layout_padding">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nama Penerima : Carson"
+                android:textSize="@dimen/text_medium"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/card_margin"
+                android:text="Nomor Telepon : 0231234654"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Alamat Pengiriman : Jalan jalan kemana mana"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/text_normal"
+                tools:ignore="HardcodedText" />
+
+        </LinearLayout>
+
+
+
+        <TextView
+            android:layout_marginTop="@dimen/card_margin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_flag_black_24dp"
+            android:drawablePadding="@dimen/drawable_padding"
+            android:text="@string/status_transaksi"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/text_large" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/card_margin"
+            android:background="@drawable/order_layout"
+            android:clickable="true"
+            android:elevation="3dp"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:orientation="vertical"
+            android:padding="@dimen/layout_padding">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2017-05-04 06:06:06 SEDANG DIKEMAS"
+                android:textSize="@dimen/text_medium"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2017-05-04 06:06:06 SEDANG DIKIRIM"
+                android:textSize="@dimen/text_medium"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2017-05-04 06:06:06 TELAH DITERIMA"
+                android:textSize="@dimen/text_medium"
+                tools:ignore="HardcodedText" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</android.support.design.widget.CoordinatorLayout>

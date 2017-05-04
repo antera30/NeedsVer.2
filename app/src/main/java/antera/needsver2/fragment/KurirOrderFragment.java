@@ -14,7 +14,7 @@ import java.util.List;
 
 import antera.needsver2.R;
 import antera.needsver2.model.Order;
-import antera.needsver2.utils.AdapterOrderGudang;
+import antera.needsver2.utils.AdapterOrder;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -23,7 +23,7 @@ public class KurirOrderFragment extends Fragment {
 
     View mView;
     private RecyclerView rv_order;
-    private AdapterOrderGudang adapterOrderKurir;
+    private AdapterOrder adapterOrderKurir;
     private List<Order> orderlist;
 
     public KurirOrderFragment() {
@@ -42,7 +42,7 @@ public class KurirOrderFragment extends Fragment {
         //add dummy data
         setData();
 
-        adapterOrderKurir = new AdapterOrderGudang(getContext(), orderlist);
+        adapterOrderKurir = new AdapterOrder(getContext(), orderlist);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
         rv_order.setLayoutManager(layoutManager);
         rv_order.setAdapter(adapterOrderKurir);
