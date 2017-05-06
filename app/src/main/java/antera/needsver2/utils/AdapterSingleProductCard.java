@@ -1,6 +1,7 @@
 package antera.needsver2.utils;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,6 +20,7 @@ import java.util.List;
 
 import antera.needsver2.R;
 import antera.needsver2.model.Product;
+import antera.needsver2.supermarket.ItemViewActivity;
 
 /**
  * Created by Fajar on 4/22/2017.
@@ -34,7 +36,7 @@ public class AdapterSingleProductCard extends RecyclerView.Adapter<AdapterSingle
         private Button add_to;
         private ImageView thumbnail;
         private RatingBar ratingBar;
-
+        private LinearLayout conLayout;
         public MyViewHolder(View view) {
             super(view);
             title = (TextView) view.findViewById(R.id.title);
@@ -43,6 +45,7 @@ public class AdapterSingleProductCard extends RecyclerView.Adapter<AdapterSingle
             discount_price = (TextView) view.findViewById(R.id.discount_price);
             add_to = (Button) view.findViewById(R.id.btn_add_to_cart);
             ratingBar = (RatingBar) view.findViewById(R.id.rating);
+            conLayout = (LinearLayout) view.findViewById(R.id.content_product);
         }
     }
 
@@ -62,13 +65,19 @@ public class AdapterSingleProductCard extends RecyclerView.Adapter<AdapterSingle
 
     @Override
     public void onBindViewHolder(final MyViewHolder holder, final int position) {
-        final Product product= productList.get(position);
+        final Product product = productList.get(position);
         holder.title.setText(product.getNama());
         holder.old_price.setText(String.valueOf(product.getHarga()));
         holder.discount_price.setText(String.valueOf(product.getHarga()));
         holder.ratingBar.setRating(3f);
+        holder.add_to.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(mContext, "barang ditambagkan ke keranjang", Toast.LENGTH_SHORT).show();
+            }
+        });
         // loading album cover using Glide library
-        Glide   .with(mContext)
+        Glide.with(mContext)
                 .load(product.getImg_url())
                 .centerCrop()
                 .placeholder(R.mipmap.ic_launcher)
@@ -77,9 +86,24 @@ public class AdapterSingleProductCard extends RecyclerView.Adapter<AdapterSingle
         holder.thumbnail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(mContext, "" + position + product.getImg_url(), Toast.LENGTH_LONG).show();
+//                Toast.makeText(mContext, "" + position + product.getImg_url(), Toast.LENGTH_LONG).show();
+
+                Intent i = new Intent(mContext, ItemViewActivity.class);
+                i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                mContext.startActivity(i);
             }
         });
+
+
+        holder.conLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(mContext, ItemViewActivity.class);
+                i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                mContext.startActivity(i);
+            }
+        });
+
     }
 
 

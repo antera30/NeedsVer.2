@@ -130,7 +130,7 @@ public class Kurir_Activity extends AppCompatActivity {
 //        switch (item.getItemId()) {
 //            case android.R.id.home:
 //                // todo: goto back activity from here
-////                Intent intent = new Intent(ProductViewActivity.this, CategoryActivity.class);
+////                Intent intent = new Intent(ProductsViewActivity.this, CategoryActivity.class);
 ////                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
 ////                startActivity(intent);
 //                finish();

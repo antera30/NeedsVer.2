@@ -3,9 +3,9 @@
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="?android:attr/selectableItemBackground"
     android:clickable="true"
     android:focusable="true"
-    android:background="?android:attr/selectableItemBackground"
     android:orientation="vertical">
 
     <android.support.v7.widget.CardView
@@ -18,15 +18,16 @@
         card_view:cardCornerRadius="@dimen/card_radius">
 
         <LinearLayout
+            android:id="@+id/content_product"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground"
             android:gravity="center_horizontal"
             android:orientation="vertical"
-            android:padding="@dimen/items_padding"
-            android:background="?android:attr/selectableItemBackground"
-            android:clickable="true"
-            android:focusable="true">
+            android:padding="@dimen/items_padding">
 
             <ImageView
                 android:id="@+id/product_thumnail"
@@ -77,12 +78,12 @@
                 <View
                     android:layout_width="wrap_content"
                     android:layout_height="1dp"
-                    android:background="@color/gray"
-                    android:layout_alignRight="@+id/price"
                     android:layout_alignEnd="@+id/price"
-                    android:layout_centerVertical="true"
                     android:layout_alignLeft="@+id/price"
-                    android:layout_alignStart="@+id/price" />
+                    android:layout_alignRight="@+id/price"
+                    android:layout_alignStart="@+id/price"
+                    android:layout_centerVertical="true"
+                    android:background="@color/gray" />
             </RelativeLayout>
 
             <TextView
@@ -106,8 +107,8 @@
                 android:stepSize="1" />
 
             <Button
-                style="@style/ButtonStyle"
                 android:id="@+id/btn_add_to_cart"
+                style="@style/ButtonStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/tambah_keranjang" />

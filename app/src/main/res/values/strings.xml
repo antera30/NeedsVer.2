@@ -51,6 +51,12 @@
     <string name="data_penerima">Data Penerima</string>
     <string name="nama_user">Carson</string>
     <string name="status_transaksi">Status Transaksi</string>
+    <string name="nama_product">Nama Produk</string>
+    <string name="harga">Rp 10.000</string>
+    <string name="rating_count">( 10 orang )</string>
+    <string name="deskripsi">Deskripsi</string>
+    <string name="isi_deskripsi">Produk ini adalah produk minuman yang tidak utuk diminum jadi jangan sampai dicoba ya</string>
+    <string name="ulasan">Ulasan</string>
 
 
 </resources>

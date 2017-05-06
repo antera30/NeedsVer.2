@@ -1,5 +1,6 @@
 package antera.needsver2.supermarket;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Rect;
@@ -22,18 +23,22 @@ import java.util.List;
 import antera.needsver2.R;
 import antera.needsver2.model.Product;
 import antera.needsver2.utils.AdapterSingleProductCard;
+import antera.needsver2.utils.RecyclerItemClickListener;
 
-public class ProductViewActivity extends AppCompatActivity {
+public class ProductsViewActivity extends AppCompatActivity {
 
     private RecyclerView rv_single_product;
     private AdapterSingleProductCard adapterSingleProductCard;
     private List<Product> products;
     private Toolbar toolbar;
+    private Context mContext;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_single_product_view);
-
+        mContext = getApplicationContext();
         toolbar = (Toolbar) findViewById(R.id.empty_app_bar);
         toolbar.setTitle("");
         setSupportActionBar(toolbar);
@@ -45,9 +50,12 @@ public class ProductViewActivity extends AppCompatActivity {
 
         RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(getApplicationContext(), 2);
         rv_single_product.setLayoutManager(mLayoutManager);
-        rv_single_product.addItemDecoration(new ProductViewActivity.GridSpacingItemDecoration(2, dpToPx(2), true));
+        rv_single_product.addItemDecoration(new ProductsViewActivity.GridSpacingItemDecoration(2, dpToPx(2), true));
         rv_single_product.setItemAnimator(new DefaultItemAnimator());
         rv_single_product.setAdapter(adapterSingleProductCard);
+
+
+
         prepareContent();
     }
 
@@ -128,7 +136,7 @@ public class ProductViewActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case android.R.id.home:
                 // todo: goto back activity from here
-//                Intent intent = new Intent(ProductViewActivity.this, CategoryActivity.class);
+//                Intent intent = new Intent(ProductsViewActivity.this, CategoryActivity.class);
 //                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
 //                startActivity(intent);
                 finish();

@@ -14,15 +14,13 @@
 
         <!-- initialize activity -->
         <activity android:name=".supermarket.MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".LoginActivity"
-            android:theme="@style/AppTheme" />
+            android:theme="@style/AppTheme">
+
+        </activity>
         <activity
             android:name=".RegisterActivity"
             android:parentActivityName=".LoginActivity"
@@ -36,11 +34,17 @@
             android:name=".supermarket.CategoryActivity"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".supermarket.ItemsActivity"
+            android:name=".supermarket.ItemViewActivity"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".supermarket.ProductViewActivity"
-            android:theme="@style/AppTheme" />
+            android:name=".supermarket.ProductsViewActivity"
+            android:theme="@style/AppTheme" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".supermarket.ChooseDeliveryLocation"
             android:theme="@style/AppTheme" />

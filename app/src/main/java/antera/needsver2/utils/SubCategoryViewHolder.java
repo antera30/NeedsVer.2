@@ -1,6 +1,5 @@
 package antera.needsver2.utils;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.view.View;
 import android.widget.TextView;
@@ -10,7 +9,7 @@ import com.thoughtbot.expandablerecyclerview.models.ExpandableGroup;
 import com.thoughtbot.expandablerecyclerview.viewholders.ChildViewHolder;
 
 import antera.needsver2.R;
-import antera.needsver2.supermarket.ProductViewActivity;
+import antera.needsver2.supermarket.ProductsViewActivity;
 import antera.needsver2.model.SubCategory;
 
 /**
@@ -36,7 +35,7 @@ public class SubCategoryViewHolder extends ChildViewHolder {
             @Override
             public void onClick(View v) {
                 Toast.makeText(v.getContext(), ""+subCategory.getId(), Toast.LENGTH_SHORT).show();
-                Intent i = new Intent(v.getContext(), ProductViewActivity.class);
+                Intent i = new Intent(v.getContext(), ProductsViewActivity.class);
                 v.getContext().startActivity(i);
 
             }
