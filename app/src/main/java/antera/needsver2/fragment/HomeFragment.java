@@ -1,5 +1,6 @@
 package antera.needsver2.fragment;
 
+import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Rect;
 import android.os.Bundle;
@@ -16,15 +17,17 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import antera.needsver2.R;
 import antera.needsver2.model.MenuNeeds;
+import antera.needsver2.supermarket.DetailPromoActivity;
+import antera.needsver2.supermarket.ListPromoActivity;
 import antera.needsver2.utils.AdapterContentMainFeature;
 import me.crosswall.lib.coverflow.CoverFlow;
 import me.crosswall.lib.coverflow.core.PagerContainer;
@@ -59,7 +62,7 @@ public class HomeFragment extends Fragment {
     private RecyclerView cv_content;
     private AdapterContentMainFeature adapterContentMainFeature;
     private List<MenuNeeds> needsList;
-
+    private Button btn_promo;
     public HomeFragment() {
         // Required empty public constructor
     }
@@ -84,7 +87,14 @@ public class HomeFragment extends Fragment {
         cv_content = (RecyclerView) myFragmentView.findViewById(R.id.content_recycler_view);
         needsList = new ArrayList<>();
         adapterContentMainFeature = new AdapterContentMainFeature(getContext(), needsList);
-
+        btn_promo = (Button) myFragmentView.findViewById(R.id.btn_promo);
+        btn_promo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getContext(), ListPromoActivity.class);
+                startActivity(i);
+            }
+        });
         RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(getContext(), 2);
         cv_content.setLayoutManager(mLayoutManager);
         cv_content.addItemDecoration(new GridSpacingItemDecoration(2, dpToPx(2), true));
@@ -120,13 +130,6 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        viewPager.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-//                stop();
-                return false;
-            }
-        });
 
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
@@ -136,9 +139,6 @@ public class HomeFragment extends Fragment {
 
             @Override
             public void onPageSelected(int position) {
-                if (position == 0) {
-                    setupCarousel();
-                }
                 //Toast.makeText(getContext(), "" + position, Toast.LENGTH_SHORT).show();
             }
 
@@ -186,7 +186,7 @@ public class HomeFragment extends Fragment {
 
         @Override
         public Fragment getItem(int position) {
-            return OverlapFragment.newInstance(covers[position]);
+            return OverlapFragment.newInstance(covers[position], position);
         }
 
         @Override

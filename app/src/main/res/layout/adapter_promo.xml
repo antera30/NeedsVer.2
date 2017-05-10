@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:gravity="center_horizontal"
+    android:id="@+id/promo_layout"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:layout_margin="@dimen/activity_horizontal_margin"
+    android:background="@drawable/white_layout_bg"
+    android:elevation="@dimen/cardview_default_elevation"
+    android:padding="@dimen/items_padding"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:layout_margin="@dimen/layout_padding"
+        android:background="@drawable/ramadhan_sale"
+        android:id="@+id/iv_promo_image"
+        android:scaleType="fitXY"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/image_promotion_height"/>
+    <TextView
+        android:id="@+id/tv_ptomo_title"
+        android:gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:text="Title Promo"/>
+    <TextView
+        android:id="@+id/tv_promo_price"
+        android:gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorPrimary"
+        android:text="Promo Discount/Price"
+        />
+    <View
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/gray"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"></View>
+    <TextView
+        android:id="@+id/tv_promo_valid"
+        android:layout_width="match_parent"
+        android:gravity="center_horizontal"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:text="Valid Until : "/>
+
+</LinearLayout>

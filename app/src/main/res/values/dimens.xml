@@ -38,4 +38,7 @@
     <dimen name="app_bar_margin">75dp</dimen>
     <dimen name="text_small">18sp</dimen>
     <dimen name="text_normal">15sp</dimen>
+    <dimen name="button_promo_width">120dp</dimen>
+    <dimen name="button_promo_height">40dp</dimen>
+    <dimen name="text_xsmall">9sp</dimen>
 </resources>

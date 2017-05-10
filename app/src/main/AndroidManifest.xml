@@ -13,13 +13,15 @@
         android:theme="@style/AppTheme">
 
         <!-- initialize activity -->
-        <activity android:name=".supermarket.MainActivity">
-
-        </activity>
+        <activity android:name=".supermarket.MainActivity" />
         <activity
             android:name=".LoginActivity"
             android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".RegisterActivity"
@@ -38,22 +40,18 @@
             android:theme="@style/AppTheme" />
         <activity
             android:name=".supermarket.ProductsViewActivity"
-            android:theme="@style/AppTheme" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:theme="@style/AppTheme" />
         <activity
             android:name=".supermarket.ChooseDeliveryLocation"
             android:theme="@style/AppTheme" />
         <activity
             android:name=".supermarket.Checkout"
             android:theme="@style/AppTheme" />
-        <activity android:name=".supermarket.KurirMainActivity"></activity>
+        <activity android:name=".supermarket.KurirMainActivity" />
         <activity android:name=".supermarket.GudangMainActivity" />
-        <activity android:name=".supermarket.DetailOrderActivity"></activity>
+        <activity android:name=".supermarket.DetailOrderActivity" />
+        <activity android:name=".supermarket.DetailPromoActivity" />
+        <activity android:name=".supermarket.ListPromoActivity"></activity>
     </application>
 
 </manifest>

@@ -57,6 +57,10 @@
     <string name="deskripsi">Deskripsi</string>
     <string name="isi_deskripsi">Produk ini adalah produk minuman yang tidak utuk diminum jadi jangan sampai dicoba ya</string>
     <string name="ulasan">Ulasan</string>
+    <string name="show_promo">Lihat semua promo</string>
+    <string name="promo">Promo</string>
+    <string name="shop_now">Belanja Sekarang</string>
+    <string name="end_promo">Masa Promo</string>
 
 
 </resources>
