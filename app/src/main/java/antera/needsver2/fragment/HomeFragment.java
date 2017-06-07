@@ -13,7 +13,10 @@ import android.support.v4.view.ViewCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.LinearSnapHelper;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.SnapHelper;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
@@ -25,12 +28,23 @@ import java.util.ArrayList;
 import java.util.List;
 
 import antera.needsver2.R;
+import antera.needsver2.model.Bangunan;
 import antera.needsver2.model.MenuNeeds;
+import antera.needsver2.rest.ApiConfig;
+import antera.needsver2.rest.ApiService;
 import antera.needsver2.supermarket.DetailPromoActivity;
 import antera.needsver2.supermarket.ListPromoActivity;
 import antera.needsver2.utils.AdapterContentMainFeature;
+import antera.needsver2.utils.AdapterHorizontal;
 import me.crosswall.lib.coverflow.CoverFlow;
 import me.crosswall.lib.coverflow.core.PagerContainer;
+import okhttp3.OkHttpClient;
+import okhttp3.logging.HttpLoggingInterceptor;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
  * Created by Fajar on 4/3/2017.
@@ -63,6 +77,14 @@ public class HomeFragment extends Fragment {
     private AdapterContentMainFeature adapterContentMainFeature;
     private List<MenuNeeds> needsList;
     private Button btn_promo;
+    private ApiService service;
+
+    //slide promo bawah
+    private RecyclerView horizontal_recycler_view;
+    private ArrayList<String> horizontalList;
+    private AdapterHorizontal horizontalAdapter;
+
+
     public HomeFragment() {
         // Required empty public constructor
     }
@@ -81,6 +103,55 @@ public class HomeFragment extends Fragment {
         Log.i("OnCreateView cover", String.valueOf(covers.length));
         // Inflate the layout for this fragment
         myFragmentView = inflater.inflate(R.layout.activity_normal, container, false);
+
+        // Retrofit
+        HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
+        interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
+        OkHttpClient client = new OkHttpClient.Builder()
+                .addInterceptor(interceptor)
+                .build();
+
+        service = new Retrofit.Builder().baseUrl(ApiConfig.API_URL).addConverterFactory(GsonConverterFactory.create())
+                .client(client).build()
+                .create(ApiService.class);
+        Call<Bangunan> call = service.getBangunan();
+        call.enqueue(new Callback<Bangunan>() {
+            @Override
+            public void onResponse(Call<Bangunan> call, Response<Bangunan> response) {
+                if (response.isSuccessful()) {
+                    Log.i("Carousel : ", response.body().getBangunan().toString());
+                } else {
+
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Bangunan> call, Throwable t) {
+
+            }
+        });
+
+
+        // handle horizontal recycler view
+        horizontal_recycler_view= (RecyclerView) myFragmentView.findViewById(R.id.horizontal_recycler_view);
+        horizontalList=new ArrayList<>();
+        horizontalList.add("horizontal 1");
+        horizontalList.add("horizontal 2");
+        horizontalList.add("horizontal 3");
+        horizontalList.add("horizontal 4");
+        horizontalList.add("horizontal 5");
+        horizontalList.add("horizontal 6");
+        horizontalList.add("horizontal 7");
+        horizontalList.add("horizontal 8");
+        horizontalList.add("horizontal 9");
+        horizontalList.add("horizontal 10");
+        SnapHelper snapHelper = new LinearSnapHelper();
+        snapHelper.attachToRecyclerView(horizontal_recycler_view);
+        horizontalAdapter=new AdapterHorizontal(horizontalList);
+        LinearLayoutManager horizontalLayoutManagaer
+                = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
+        horizontal_recycler_view.setLayoutManager(horizontalLayoutManagaer);
+        horizontal_recycler_view.setAdapter(horizontalAdapter);
 
 
         //the menu boxes

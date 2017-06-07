@@ -12,6 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
+
         <!-- initialize activity -->
         <activity android:name=".supermarket.MainActivity" />
         <activity

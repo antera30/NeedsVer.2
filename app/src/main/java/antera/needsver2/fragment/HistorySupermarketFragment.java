@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,10 +16,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 import antera.needsver2.R;
+import antera.needsver2.model.Bangunan;
 import antera.needsver2.model.Order;
+import antera.needsver2.rest.ApiConfig;
+import antera.needsver2.rest.ApiService;
 import antera.needsver2.supermarket.DetailOrderActivity;
 import antera.needsver2.utils.AdapterOrder;
 import antera.needsver2.utils.RecyclerItemClickListener;
+import okhttp3.OkHttpClient;
+import okhttp3.logging.HttpLoggingInterceptor;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -29,7 +40,7 @@ public class HistorySupermarketFragment extends Fragment {
     private RecyclerView rv_order;
     private AdapterOrder adapter;
     private List<Order> orderlist;
-
+    private ApiService service;
     public HistorySupermarketFragment() {
         // Required empty public constructor
     }
@@ -44,6 +55,35 @@ public class HistorySupermarketFragment extends Fragment {
 
         rv_order = (RecyclerView) mView.findViewById(R.id.rv_supermarket_history);
         orderlist = new ArrayList<>();
+
+
+        // Retrofit
+        HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
+        interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
+        OkHttpClient client = new OkHttpClient.Builder()
+                .addInterceptor(interceptor)
+                .build();
+
+        service = new Retrofit.Builder().baseUrl(ApiConfig.API_URL).addConverterFactory(GsonConverterFactory.create())
+                .client(client).build()
+                .create(ApiService.class);
+        Call<Bangunan> call = service.getBangunan();
+        call.enqueue(new Callback<Bangunan>() {
+            @Override
+            public void onResponse(Call<Bangunan> call, Response<Bangunan> response) {
+                if (response.isSuccessful()) {
+                    Log.i("Supermarket : ", response.body().getBangunan().toString());
+                } else {
+
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Bangunan> call, Throwable t) {
+
+            }
+        });
+
 
         //add dummy data
         setData();
