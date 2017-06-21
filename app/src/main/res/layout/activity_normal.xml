@@ -18,42 +18,51 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <me.crosswall.lib.coverflow.core.PagerContainer
-                    android:id="@+id/pager_container"
+                <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="?attr/colorPrimary">
+                    android:layout_height="wrap_content">
 
-                    <android.support.v4.view.ViewPager
-                        android:id="@+id/overlap_pager"
-                        android:layout_width="300dp"
-                        android:layout_height="200dp"
-                        android:layout_gravity="center"
-                        android:layout_marginBottom="@dimen/activity_vertical_margin"
-                        android:layout_marginTop="@dimen/activity_vertical_margin" />
-                </me.crosswall.lib.coverflow.core.PagerContainer>
+                    <me.crosswall.lib.coverflow.core.PagerContainer
+                        android:id="@+id/pager_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="?attr/colorPrimary">
 
-                <Button
-                    android:id="@+id/btn_promo"
-                    android:layout_width="@dimen/button_promo_width"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
+                        <android.support.v4.view.ViewPager
+                            android:id="@+id/overlap_pager"
+                            android:layout_width="300dp"
+                            android:layout_height="200dp"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="@dimen/activity_vertical_margin"
+                            android:layout_marginTop="@dimen/activity_vertical_margin" />
+                    </me.crosswall.lib.coverflow.core.PagerContainer>
+
+                    <Button
+                        android:id="@+id/btn_promo"
+                        android:layout_width="@dimen/button_promo_width"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="@dimen/activity_horizontal_margin"
+                        android:layout_marginTop="@dimen/activity_horizontal_margin"
+                        android:alpha="0.75"
+                        android:background="@drawable/dark_layout_bg"
+                        android:text="@string/show_promo"
+                        android:textSize="@dimen/text_xsmall" />
+                </RelativeLayout>
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/content_recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:clipToPadding="false"
+                    android:layout_marginTop="170dp"
                     android:layout_marginRight="@dimen/activity_horizontal_margin"
-                    android:layout_marginTop="@dimen/activity_horizontal_margin"
-                    android:alpha="0.75"
-                    android:background="@drawable/dark_layout_bg"
-                    android:text="@string/show_promo"
-                    android:textSize="@dimen/text_xsmall" />
+                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:scrollbars="vertical"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
             </RelativeLayout>
 
-
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/content_recycler_view"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:clipToPadding="false"
-                android:scrollbars="vertical"
-                app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
             <TextView
                 android:layout_width="match_parent"

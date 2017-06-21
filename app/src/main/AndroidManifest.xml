@@ -12,17 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-
         <!-- initialize activity -->
         <activity android:name=".supermarket.MainActivity" />
         <activity
             android:name=".LoginActivity"
             android:theme="@style/AppTheme">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".RegisterActivity"
@@ -52,7 +47,14 @@
         <activity android:name=".supermarket.GudangMainActivity" />
         <activity android:name=".supermarket.DetailOrderActivity" />
         <activity android:name=".supermarket.DetailPromoActivity" />
-        <activity android:name=".supermarket.ListPromoActivity"></activity>
+        <activity android:name=".supermarket.ListPromoActivity" />
+        <activity android:name=".GreetingsCOD">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
